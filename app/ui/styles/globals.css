@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f6f6f6;
   --foreground: #171717;
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --chalk: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-noto-sans);
+    --font-serif: var(--font-newsreader);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply font-serif text-(--color-foreground) bg-(--chalk);
+}
+.book-card {
+  transition: all 0.3s;
+  background: linear-gradient(180deg, rgba(142, 81, 255, 0.08) 0%, rgba(0, 0, 0, 0) 71%);
+}
+
+.book-row {
+  transition: all 0.3s;
+  background: linear-gradient(90deg, rgba(142, 81, 255, 0.08) 0%, rgba(0, 0, 0, 0) 71%);
+}
+
+.book-card:hover,
+.book-row:hover {
+  @apply bg-violet-200;
+}
+
+.aspect-ratio-250-400 {
+  aspect-ratio: 314/475;
+}
+
+.genre-label {
+  box-shadow: 1px 1px 4px #8e51ff;
 }

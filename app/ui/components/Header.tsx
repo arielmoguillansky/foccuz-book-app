@@ -1,5 +1,5 @@
 export const Header = () => (
-  <header className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-HEDER
-</header>
-)
+  <header className="font-serif font-semibold text-2xl text-violet-500 uppercase h-[86px] border-b border-violet-300 flex items-center justify-center">
+    Personal Book Shelf
+  </header>
+);
