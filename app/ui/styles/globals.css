@@ -37,3 +37,14 @@ body {
 .genre-label {
   box-shadow: 1px 1px 4px #8e51ff;
 }
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
