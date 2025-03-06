@@ -26,7 +26,7 @@ export default async function BooksPage({
   const books = await getData(searchQuery);
 
   return (
-    <div className="max-w-[1024px] mx-auto md:p-8 p-4 min-h-screen">
+    <div className="max-w-[1024px] mx-auto md:p-8 p-4 min-h-[calc(100vh-145px)]">
       <div className="flex items-center gap-x-6 mb-8">
         <h1 className="md:text-4xl text-xl whitespace-nowrap">
           Todos los libros

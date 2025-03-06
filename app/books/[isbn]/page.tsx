@@ -3,17 +3,16 @@ import { extractBooks } from '@/app/lib/utils'
 import Image from 'next/image'
 import Link from "next/link";
 import { notFound } from "next/navigation";
-//Next.js uses APIs like generateMetadata and generateStaticParams where you will need to use the same data fetched in the page.
-// If you are using fetch, requests can be memoized by adding cache: 'force-cache'. This means you can safely call the same URL with the same options, and only one request will be made.
+// Next.js utiliza APIs como generateMetadata y generateStaticParams donde se puede usar los mismos datos de la página.
+// Al utilizar fetch, los requests pueden ser memoizadas mediante la adición de cache: 'force-cache'. 
+// Esto quiere decir que solo se va a realizar una única solicitud. Ayuda a optimizar la cantidad de requests que se realizan.
 
-// Next.js will invalidate the cache when a
-// request comes in, at most once every 60 seconds.
+
+// Con revalidate se puede establecer el tiempo en segundos que se va a esperar antes de volver a generar la página.
 export const revalidate = 3600;
 
-// We'll prerender only the params from `generateStaticParams` at build time.
-// If a request comes in for a path that hasn't been generated,
-// Next.js will server-render the page on-demand.
-export const dynamicParams = true; // or false, to 404 on unknown paths
+// Se pre-renderizarán únicamente los parámetros provenientes de `generateStaticParams` durante el build time.
+export const dynamicParams = true;
 
 async function getBook(isbn: string) {
   const res = await fetch(
@@ -25,6 +24,7 @@ async function getBook(isbn: string) {
   const { library } = await res.json();
 
   const extractedBooks: Book[] = extractBooks(library);
+  // Busco el primer libro que coincida con el ISBN
   const book: Book | undefined = extractedBooks.find(
     (book: Book) => book["ISBN"] === isbn
   );
@@ -40,6 +40,7 @@ export async function generateStaticParams() {
     }
   ).then((res) => res.json());
 
+    // Decidí utilzar el ISBN como parámetro para la página de detalle de un libro.
   return library.map((book: Book) => ({
     isbn: String(book["ISBN"]),
   }));
@@ -63,11 +64,12 @@ export default async function BookPage({
 }: {
   params: Promise<{ isbn: string }>;
 }) {
+  // Obtengo el ISBN del libro proveniente del parámetro de la url
   const { isbn } = await params;
   const book = await getBook(isbn);
 
   return (
-    <section className="min-h-screen max-w-[1024px] mx-auto md:p-8 p-4">
+    <section className="min-h-[calc(100vh-145px)] max-w-[1024px] mx-auto md:p-8 p-4">
       <div className="flex items-center gap-x-6 mb-8">
         <h1 className="md:text-4xl text-xl whitespace-nowrap">{book.title}</h1>
         <hr className="h-[0.25px] border-0 bg-violet-500 w-full" />
