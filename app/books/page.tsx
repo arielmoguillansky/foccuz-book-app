@@ -1,16 +1,17 @@
-import { Book, Library } from "@/app/lib/Types";
-import { extractBooks } from "@/app/lib/utils";
+import { Book } from "@/app/lib/Types";
+import { extractBooks, fetchData } from "@/app/lib/utils";
 import { BookList } from "../ui/components/BookList";
 
 async function getData(searchQuery?: string) {
-  const data = await fetch(
-    `https://gitlab.com/-/snippets/4789289/raw/main/data.json`
-  );
-  const { library }: Library = await data.json();
+  const dataUrl = process.env.NEXT_PUBLIC_DATA_URL;
+  if (!dataUrl) {
+    throw new Error("NEXT_PUBLIC_DATA_URL is not defined");
+  }
+  const { library } = await fetchData();
   const books: Book[] = extractBooks(library);
   if (searchQuery) {
     return books.filter((book) =>
-      book.title.toLowerCase().includes(searchQuery.toLowerCase())
+      book.author.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
   }
   return books;

@@ -24,5 +24,6 @@ npm run dev
 - Refactorización de código: componentizar elementos repetidos
 - Filtrado por otras propiedades del libro: género, autor, año
 - Funcionalidad de paginación o infinit-scrolling en la página de catálogo de libros
-- Funcionalidad de ordenamiento por titulo, autor o año
-- Mejora en la UI
+- Funcionalidad de ordenamiento por titulo o año
+- Mejoras en la UI
+- Aprovechar el lazyloading nativo de NextJs, utilizando Suspense para generar un skeleton durante el tiempo de cargado y asi mejorar la experiencia ante cargas lentas.
