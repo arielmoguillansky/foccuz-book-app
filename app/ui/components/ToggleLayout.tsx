@@ -2,8 +2,8 @@
 
 import { useContext } from "react";
 import { ThemeContext } from "./BookList";
-import { GridIcon } from "./GridIcon";
-import { ListIcon } from "./ListIcon";
+import { GridIcon } from "@/app/ui/components/common/icons/GridIcon";
+import { ListIcon } from "@/app/ui/components/common/icons/ListIcon";
 
 export const ToggleLayout: React.FC = () => {
   const { layout, setLayout } = useContext(ThemeContext);

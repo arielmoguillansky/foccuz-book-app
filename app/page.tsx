@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo } from "./ui/components/Logo";
+import { Logo } from "@/app/ui/components/common/Logo";
 
 export default function Home() {
   return (

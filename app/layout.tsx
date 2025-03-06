@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans, Newsreader } from "next/font/google";
 import "@/app/ui/styles/globals.css";
-import { Footer } from "@/app/ui/components/Footer";
-import { Header } from "@/app/ui/components/Header";
+import { Footer } from "@/app/ui/components/common/Footer";
+import { Header } from "@/app/ui/components/common/Header";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",

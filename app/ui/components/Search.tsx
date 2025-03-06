@@ -25,12 +25,12 @@ export const Search: React.FC = () => {
   return (
     <div className="flex flex-col grow">
       <label htmlFor="search" className="md:text-xl text-md">
-        ¿Estás buscando algo en particular?
+        ¿Estás buscando a algún autor?
       </label>
       <input
         className="border border-violet-400 focus:border-violet-500 focus:shadow-[2px_1px_8px_0px_rgb(142_81_255/48%)] outline-0 rounded-sm p-2"
         type="text"
-        placeholder="Título..."
+        placeholder="Autor..."
         onChange={(e) => handleSearch(e.target.value)}
         defaultValue={searchParams.get("search")?.toString()}
       />
