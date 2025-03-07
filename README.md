@@ -10,7 +10,9 @@ Esta es una aplicación hecha en NextJs v15 con app router.
 npm install
 ```
 
-2. Inicializar el servidor
+2. Crear archivo .env y definir la variable de entorno ```NEXT_PUBLIC_DATA_URL``` con la url de data
+
+3. Inicializar el servidor
 
 ```bash
 npm run dev

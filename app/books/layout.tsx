@@ -27,6 +27,7 @@ export default function RootLayout({
       <body
         className={`${notoSans.variable} ${newsreader.variable} antialiased overflow-x-hidden`}
       >
+        <Header />
         {children}
         <Footer />
       </body>
