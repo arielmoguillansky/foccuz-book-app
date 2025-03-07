@@ -15,6 +15,9 @@
 body {
   @apply font-serif text-(--color-foreground) bg-(--chalk);
 }
+header {
+  background: linear-gradient(rgb(214, 201, 253) 0%, rgb(225, 215, 251) 26%, rgb(247, 245, 242) 88%, rgb(247, 245, 242) 100%);
+}
 .book-card {
   transition: all 0.3s;
   background: linear-gradient(180deg, rgba(142, 81, 255, 0.08) 0%, rgba(0, 0, 0, 0) 71%);

@@ -46,7 +46,7 @@ export default async function BookPage({
   const book = await getBook(params.isbn);
 
   return (
-    <section className="min-h-[calc(100vh-145px)] max-w-[1024px] mx-auto md:p-8 p-4">
+    <section className="min-h-[calc(100vh-57px)] max-w-[1024px] mx-auto md:p-8 p-4">
       <div className="flex items-center gap-x-6 mb-8">
         <h1 className="md:text-4xl text-xl whitespace-nowrap">{book.title}</h1>
         <hr className="h-[0.25px] border-0 bg-violet-500 w-full" />

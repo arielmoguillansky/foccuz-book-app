@@ -3,7 +3,7 @@ import { Logo } from "@/app/ui/components/common/Logo";
 
 export default function Home() {
   return (
-    <div className="max-w-[1024px] mx-auto md:p-8 p-4 min-h-[calc(100vh-145px)] flex flex-col justify-center items-center">
+    <div className="max-w-[1024px] mx-auto md:p-8 p-4 min-h-[calc(100vh-(57px))] flex flex-col justify-center items-center">
       <div className="w-40 h-32 mb-8">
         <Logo />
       </div>

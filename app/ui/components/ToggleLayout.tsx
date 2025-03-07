@@ -12,8 +12,6 @@ export const ToggleLayout: React.FC = () => {
     setLayout(layout === "grid" ? "list" : "grid");
   };
 
-  console.log(layout);
-  
   return (
     <div className="flex w-fit items-end">
     <button
